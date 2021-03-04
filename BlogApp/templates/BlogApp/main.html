@@ -86,7 +86,7 @@
               
               
             </ul>
-            <div class="d-flex pe-md-5" style="color: white;">
+            <div class="d-flex pe-md-5" style="color: white;" id="helloMessage">
               Hello {{request.user}}!
             </div>
             <form class="d-flex" method="POST" action="/searchResults/">
@@ -172,6 +172,7 @@
       
       if(user=="AnonymousUser"){
         document.getElementById('Logout').classList.add('d-none')
+        document.getElementById('helloMessage').classList.add('d-none')
         
         
         
