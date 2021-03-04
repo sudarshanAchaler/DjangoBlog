@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css?family=Rubik&display=swap");
+
+.navbar {
+  width: 100%;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+}
+
+.box-element {
+  box-shadow: hsl(0, 0%, 80%) 0 0 16px;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.bg-dark {
+  background-color: #182c61 !important;
+}
+
+.btn1 {
+  background-color: #fff;
+}
+
+.box {
+  display: block;
+  width: 90%;
+  margin: auto;
+  box-shadow: hsl(0, 0%, 80%) 0 0 2px;
+  background-color: #fff;
+  border-radius: 4px;
+}
+
+.alert1 {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
+.btn-light {
+  color: rgb(0, 0, 0);
+  background-color: #182c61;
+  border-color: #28292b;
+}
+.btn-light:hover {
+  color: #000;
+  background-color: #385299;
+  border-color: #000;
+}
+
+.btn-lg1 {
+  background-color: #182c61;
+}
+
+.btn-success:focus {
+  color: #fff;
+  background-color: #157347;
+  border-color: #146c43;
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.5);
+}
+
+.form-control:focus {
+  color: #212529;
+  background-color: #fff;
+  border-color: #86b7fe;
+  outline: 0;
+  box-shadow: 0 0 0 0.1rem rgba(6, 22, 48, 0);
+}

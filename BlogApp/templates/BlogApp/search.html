@@ -1,0 +1,57 @@
+{% extends 'BlogApp/main.html' %}
+{% load static %}
+
+
+{% block title %}
+    Code the Web-Search
+{% endblock title %}
+
+
+{% block style %}
+    <style>
+        body{
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6)), url("{% static 'images/aboutimg.jpg' %}") no-repeat center center/cover;
+        }
+    </style>
+{% endblock style %}
+    
+    
+
+
+{% block content %}
+    <div class="container my-3 box-element " style="box-shadow: hsl(236, 66%, 25%) 0 0 4px;">
+        <div class="text-center my-3">
+            <h3><strong style="color:#182c61">Search Results for : </strong><span style="font-size: 0.8em;">{{keyword}}</span>  </h3>
+
+        </div>
+
+        <div class="row mb-2 mt-5 px-md-5 px-0">
+            
+            {% for post in posts %}
+            <div class="col-md-12">
+              <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                  <strong class="d-inline-block mb-2 text-primary">{{post.postCategory}}</strong>
+                  <h3 class="mb-0">{{post.title}}</h3>
+                  <div class="mb-1 text-muted my-2">{{post.dateAdded}} </div>
+                  <p class="card-text mb-auto">{{post.shortDescription}}</p>
+                  <a href="/post/{{post.id}}" class="stretched-link" style="text-decoration: none;">Continue reading</a>
+                </div>
+                <div class="col-auto d-none d-lg-block">
+                  <img src="{{post.imageURL}}" alt="loading" class="bd-placeholder-img" height="284" width="400" style="mask-repeat: no-repeat;">
+        
+                </div>
+              </div>
+            </div>
+              
+            {% endfor %}
+              
+
+
+            
+
+          </div>
+
+    </div>
+{% endblock content %}
+    

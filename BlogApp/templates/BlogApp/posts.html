@@ -1,0 +1,104 @@
+{% extends 'BlogApp/main.html' %}
+{% load static %}
+
+
+{% block title %}
+    CTW-Posts
+{% endblock title %}
+
+
+{% block style %}       
+    <style>
+        #featured-box{
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)), url("{% static 'images/featured.jfif' %}") no-repeat center center/cover;
+        }
+        
+    </style>
+    
+  
+{% endblock style %}        
+    
+    
+
+{% block content %}
+    <div class="container  mt-3  py-md-3 p-sm-0">
+        <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark " id="featured-box">
+            <div class="col-md-6 px-0">
+              <h1 class="display-4 fst-italic">{{featuredPost.title}} <h2 ><span class="badge bg-danger">Featured</span></h2> </h1>
+              <p class="lead my-3">{{featuredPost.shortDescription}}</p>
+              <p class="lead mb-0"><a href="/post/{{featuredPost.id}}" class="text-white fw-bold" style="text-decoration: none;">Continue reading...</a></p>
+            </div>
+          </div>
+
+          
+        
+
+          <div class="row mb-2 mt-5 px-md-5 px-0">
+            
+            {% for post in pageN.object_list %}
+            <div class="col-md-12">
+              <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                  <strong class="d-inline-block mb-2 text-primary">{{post.postCategory}}</strong>
+                  <h3 class="mb-0">{{post.title}}</h3>
+                  <div class="mb-1 text-muted my-2">{{post.dateAdded}} </div>
+                  <p class="card-text mb-auto">{{post.shortDescription}}</p>
+                  <a href="/post/{{post.id}}" class="stretched-link" style="text-decoration: none;">Continue reading</a>
+                </div>
+                <div class="col-auto d-none d-lg-block">
+                  <img src="{{post.imageURL}}" alt="loading" class="bd-placeholder-img" height="284" width="400" style="mask-repeat: no-repeat;">
+        
+                </div>
+              </div>
+            </div>
+              
+            {% endfor %}
+              
+
+
+            
+
+          </div>
+
+          <!-- paginator -->
+          <div class="row">
+            <nav aria-label="..." class="my-5">
+              <ul class="pagination justify-content-center" >
+                <li
+                  class="page-item {% if not pageHasPrevious %} disabled {% endif %}"
+                >
+                  <a
+                    class="page-link"
+                    href="{% url 'posts' %}?pageNumber={{previouspageNum}}"
+                    tabindex="-1"
+                    style="background-color: #fff;"
+                    >Previous</a
+                  >
+                </li>
+
+
+                <li class="page-item {% if not pageHasNext %} disabled {% endif %}">
+                  <a
+                    class="page-link"
+                    href="{% url 'posts' %}?pageNumber={{nextpageNum}}"
+                    tabindex="-1"
+                    style="background-color: #fff;"
+                    >Next</a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <!-- paginator -->
+
+    </div>
+{% endblock content %}
+    
+
+
+{% block script %}
+  <script>
+
+  </script>
+{% endblock script %}
+  

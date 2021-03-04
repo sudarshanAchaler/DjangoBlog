@@ -1,0 +1,118 @@
+{% extends 'BlogApp/main.html' %}
+{% load static %}
+
+
+{% block title %}
+    post
+{% endblock title %}
+
+ 
+
+    
+
+
+{% block content %}
+    <div class="container mt-5 box-element " style="box-shadow: none;">
+        <div class="row">
+            <div class="col-12  p-5">
+                {{post.content| safe}}
+            </div>
+        </div>
+        
+
+    </div>
+    <div class="container mt-5 pt-5 ">
+        <p>
+            <a type="button" class="btn btn-dark text-light"  id="likeBtn">
+                <span id="likedOrNot">Like <i class="far fa-thumbs-up "></i> </span>  <span class="badge bg-success" id="likesCount">{{likesCount}}</span>
+                <span class="visually-hidden"></span>
+            </a>
+
+            <a type="button" class="btn btn-dark text-light mx-2"  data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" id="commentBtn">
+                Comment <i class="far fa-comments"></i> <span class="badge bg-warning text-dark" id="commentCount">{{commentCount}}</span>
+                <span class="visually-hidden"></span>
+            </a>
+
+        </p>
+        <div  id="collapseExample" class="collapse ">
+
+            <div class=" mx-sm-0 p-0 mt-4 p-md-5">
+                
+                    <div class="box-element ">
+                            <h2 style="text-align: center;"><i class="far fa-comments mx-2"></i> Recent Comments</h2>
+                            
+                            {% for comment in comments|slice:10  %}
+                        <div class="box text-start my-sm-2 my-md-0">
+                            
+                            <div class="card-body my-4 my-md-2 py-2"  style="overflow: hidden;">
+                                <b style="color: #182c61;">{{comment.user}}</b>: {{comment.body}}
+                                <span style="float: right; "><small>{{comment.created_on}}</small> </span>           
+                            </div>  
+                            
+                        </div>
+                            {% endfor %}
+                                
+                        
+                        
+                            <div class="input-group mt-4">
+                                <input class="form-control form-control-sm" type="text" placeholder="Enter your message here" aria-label=".form-control-sm example" name="comment" id="commentBody" required>
+                                <button class="btn btn-success" type="button" id="commentSubmit"> Send<i class="far fa-paper-plane"></i></button>
+                              </div>
+        
+                        
+        
+                    </div>
+    
+                
+            </div>
+
+        </div>
+
+    </div>
+          
+
+    </div>
+{% endblock content %}
+    
+
+{% block script %}
+    <script>
+        var PostId = '{{post.id}}'
+        submitBtn= document.getElementById('commentSubmit');
+        document.getElementById("commentSubmit").addEventListener("click", function() {
+            if(user=="AnonymousUser"){
+                alert("Login to comment on Posts")
+                return location.reload()
+            }
+            comment=document.getElementById('commentBody').value;
+            createComment(comment,PostId);
+        });
+
+        likeBtn=document.getElementById('likeBtn');
+        document.getElementById("likeBtn").addEventListener("click", function() {
+            if(user=="AnonymousUser"){
+                alert("Login to like Posts")
+                return location.reload()
+            }
+            like(PostId);
+        });
+
+        liked='{{liked}}'
+        if(liked=='True'){
+            document.getElementById('likeBtn').classList.remove('btn-dark')
+            document.getElementById('likeBtn').classList.add('btn-light')
+            document.getElementById('likedOrNot').innerHTML='Liked <i class="fas fa-thumbs-up"></i> '
+        }
+        else{
+            document.getElementById('likeBtn').classList.remove('btn-light')
+            document.getElementById('likeBtn').classList.add('btn-dark')
+            document.getElementById('likedOrNot').innerHTML='Like <i class="far fa-thumbs-up "></i> '
+        }
+
+    </script>
+{% endblock script %}
+    
+
+
+
+       

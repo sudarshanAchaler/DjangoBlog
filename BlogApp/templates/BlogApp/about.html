@@ -1,0 +1,97 @@
+{% extends 'BlogApp/main.html' %}
+{% load static %}
+
+
+{% block title %}
+    CTW-About
+{% endblock title %}
+    
+
+{% block style %}
+    <style>
+        
+
+        body{
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6)), url("{% static 'images/aboutimg.jpg' %}") no-repeat center center/cover;
+            
+            color: aliceblue;
+        }
+
+        span{
+            color: rgb(0, 192, 240)
+        }
+        
+        @media(max-width:600px){
+            body{
+                background: linear-gradient(to top , rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.1)), url("{% static 'images/aboutimg.jpg' %}") no-repeat center center/cover;
+            
+                color: aliceblue;
+            }
+          }
+    
+    </style>
+{% endblock style %}
+    
+
+{% block content %}
+    <div class="container-fluid px-0 ">
+
+        <div class="container pt-5" >
+            <div class="row text-center">
+                <h1 style="color: rgb(229, 229, 236);">Meet the Bloggers </h1>
+                <hr>
+            </div>
+        </div>
+      
+        <div class="container py-1 text-center" style="color: black;">
+            <div class="row px-0">
+                    <div class="col-md-4 my-4" >
+                            <div class="card text-center" style="border-radius: 2em; background: rgba(255, 255, 255, 1);">
+                                <img src="{% static 'images/img1.jpg' %}" alt="" class="bd-placeholder-img rounded-circle mt-2  mx-auto d-block" height="140" width="140">
+                                    <div class="card-body">
+                                    <h5 >Sudarshan Achaler <br />
+                                        <span> Founder </span></h5>
+                                    <p class="card-text">“ Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur eligendi harum enim. Sunt beatae sed fuga ut ipsa voluptas, at fugiat maxime? Eligendi, incidunt?” </p>
+                                    <p class="card-text"><span style="color: rgb(29, 41, 109); cursor:pointer;"><i class="fab fa-twitter-square fa-2x mx-1"></i> <i class="fab fa-facebook-square fa-2x mx-1"></i> <i class="fab fa-instagram fa-2x mx-1"></i> </span></p>
+                                    </div>
+                            </div>
+                    </div>
+                    <div class="col-md-4 my-4" >
+                            <div class="card text-center" style="border-radius: 2em; background: rgba(255, 255, 255, 1);">
+                                <img src="{% static 'images/img2.jpg' %}" alt="" class="bd-placeholder-img rounded-circle mt-2  mx-auto d-block" height="140" width="140">
+                                    <div class="card-body">
+                                    <h5 >Sudarshan Achaler <br />
+                                        <span> Editor </span></h5>
+                                    <p class="card-text">“ Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur eligendi harum enim. Sunt beatae sed fuga ut ipsa voluptas, at fugiat maxime? Eligendi, incidunt?” </p>
+                                    <p class="card-text"><span style="color: rgb(29, 41, 109); cursor:pointer;"><i class="fab fa-twitter-square fa-2x mx-1"></i> <i class="fab fa-facebook-square fa-2x mx-1"></i> <i class="fab fa-instagram fa-2x mx-1"></i> </span></p>
+                                    </div>
+                            </div>
+                    </div>
+                    <div class="col-md-4 my-4" >
+                            <div class="card text-center" style="border-radius: 2em; background: rgba(255, 255, 255, 1);">
+                                <img src="{% static 'images/img3.jpg' %}" alt="" class="bd-placeholder-img rounded-circle mt-2  mx-auto d-block" height="140" width="140">
+                                    <div class="card-body">
+                                    <h5 >Sudarshan Achaler <br />
+                                        <span> Writer </span></h5>
+                                    <p class="card-text">“ Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur eligendi harum enim. Sunt beatae sed fuga ut ipsa voluptas, at fugiat maxime? Eligendi, incidunt?” </p>
+                                    <p class="card-text"><span style="color: rgb(29, 41, 109); cursor:pointer;"><i class="fab fa-twitter-square fa-2x mx-1"></i> <i class="fab fa-facebook-square fa-2x mx-1"></i> <i class="fab fa-instagram fa-2x mx-1"></i> </span></p>
+                                    </div>
+                            </div>
+                    </div>
+                   
+            </div>
+        </div>
+            
+    
+    </div>
+        
+            
+    
+{% endblock content %}
+    
+
+
+{% block script %}
+    
+{% endblock script %}
+    

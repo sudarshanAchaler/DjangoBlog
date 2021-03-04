@@ -1,0 +1,228 @@
+{% extends 'BlogApp/main.html' %}
+{% load static %}
+
+
+{% block title %}
+    Blog-Home
+{% endblock title %}
+
+
+{% block style %}
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+      
+    }
+
+    @media(max-width:600px){
+  
+      .carousel-caption{
+        display: none;
+      }
+    }
+
+    @media(max-width:400px){
+      #carousel{
+        display: none;
+      }
+      
+    }
+
+    
+  </style>
+{% endblock style %}
+  
+    
+
+
+{% block content %}
+
+
+
+<div class="container-fluid px-0" id="carousel">
+  <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="3000">
+        <img src="{%static 'images/slider2.jpg' %}" alt="" class="bd-placeholder-img img-fluid "  >
+
+        <div class="container">
+          <div class="carousel-caption text-start ">
+            <h1><span id="typed"></span></h1>
+            <p>India's Most Viewed Coding and Programming Blog</p>
+            <p><a class="btn btn-lg btn-warning" href="{% url 'posts' %}">Start Learning</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="5000" >
+        <img src="{%static 'images/slider4.jfif' %}" alt="" class="bd-placeholder-img img-fluid">
+
+        <div class="container">
+          <div class="carousel-caption text-end">
+            <h1>Meet The Editors</h1>
+            <p>Blog is managed by one of the India's best Coders</p>
+            <p><a class="btn btn-lg btn-primary" href="{% url 'about' %}">Learn more</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="5000">
+        <img src="{%static 'images/slider3.jpg' %}" alt="" class="bd-placeholder-img img-fluid">
+
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>Only Pure Content, No Ads.</h1>
+            <p>Today, it feels like most articles are trying to sell you something. They are, as they cannot reach you for free.</p>
+            
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="5000">
+        <img src="{%static 'images/slider1.jfif' %}" alt="" class="bd-placeholder-img img-fluid">
+
+        <div class="container">
+          <div class="carousel-caption text-start">
+            <h1>Web Developers Guide.</h1>
+            <p>Code the Web is a blog mainly aimed at Web Developers interested in building wonderful websites.</p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button> -->
+  </div>
+</div>
+
+
+<div class="container text-center">
+  <div class="container marketing my-5">
+
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="col-lg-4 ">
+          <img src="{% static 'images/img1.jpg' %}" alt="" class="bd-placeholder-img rounded-circle my-2" height="140" width="140">
+  
+          <h2>Web Development</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque facere vitae ratione illum, alias error deserunt cum, ad veritatis ut repellat omnis! Suscipit non, quod facere facilis atque cumque illo illum beatae sit cum.</p>
+          <p><a type="button" class="btn btn-dark btn-lg1 my-2" href="{% url 'posts' %}">View More</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img src="{% static 'images/img2.jpg' %}" alt="" class="bd-placeholder-img rounded-circle my-2" height="140" width="140">
+  
+          <h2>Data Science</h2>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat minus expedita voluptatem praesentium quod magni tempore aliquid nam sequi voluptas! In a quae cupiditate. Sint fuga labore maiores cumque animi eius unde veniam minus!</p>
+          <p><a type="button" class="btn btn-dark btn-lg1 my-2" href="{% url 'posts' %}">View More</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img src="{% static 'images/img3.jpg' %}" alt="" class="bd-placeholder-img rounded-circle my-2" height="140" width="140">
+  
+          <h2>Native App Development</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident alias, mollitia, assumenda aliquam quidem ullam sed eum illo commodi debitis dicta expedita quae dolorem ad rem a. Adipisci consequuntur ducimus repellat et non quibusdam.</p>
+          <p><a type="button" class="btn btn-dark btn-lg1 my-2" href="{% url 'posts' %}">View More</a></p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+  
+  
+      <!-- START THE FEATURETTES -->
+  
+      <hr class="featurette-divider">
+  
+      <div class="row featurette my-5 py-3">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Why is computer programming important for the future?</h2>
+          <p class="lead">Programming is crucial when it comes to learning how to innovate, create very eco-friendly solutions for global problems and such. 
+            In essence, it helps in speeding up the input and output processes in a machine. 
+            Additionally, it helps you develop the ability to automate, collect, manage, analyze the data and information correctly.
+            <br><br>
+            Programming is, without a doubt, very imporant. 
+            Hundreds of universities, thousands of professors, students and practitioners teaching, learning and practicing the discipline of programming are the purest testimony to the fact. 
+            And that's why programming is the skill you have to learn.
+            
+          </p>
+        </div>
+        <div class="col-md-5">
+          <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" src="{% static 'images/home1.jpg' %}" alt="">
+  
+        </div>
+      </div>
+  
+      <hr class="featurette-divider">
+  
+      <div class="row featurette ">
+        <div class="col-md-7 order-md-2">
+          <h2 class="featurette-heading">Best Programming Practices. <span class="text-muted">See for yourself.</span></h2>
+          <p class="lead">“I think it's fair to say that personal computers have become the most empowering tool we've ever created. They're tools of communication, they're tools of creativity, and they can be shaped by their user.”
+
+            - Bill Gates <br> <br>
+            “Any fool can write code that a computer can understand. Good programmers write code that humans can understand.” – Martin Fowler</p>
+        </div>
+        <div class="col-md-5 order-md-1">
+          <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" src="{% static 'images/home2.jpg' %}" alt="">
+  
+        </div>
+      </div>
+  
+      <hr class="featurette-divider ">
+  
+      <div class="row featurette ">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Be a Smart Programmer. <span class="text-muted">Checkmate.</span></h2>
+          <p class="lead">Learning to write programs stretches your mind, and helps you think better, creates a way of thinking about things that I think is helpful in all domains.
+            <br><br>
+            “Before software can be reusable it first has to be usable.” – Ralph Johnson
+            <br><br>
+            “Make it work, make it right, make it fast.” – Kent Beck
+          </p>
+        </div>
+        <div class="col-md-5">
+          <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" src="{% static 'images/home3.jpg' %}" alt="">
+  
+        </div>
+      </div>
+  
+      <hr class="featurette-divider">
+  
+      <!-- /END THE FEATURETTES -->
+      </div>
+</div>
+    
+{% endblock content %}
+    
+
+
+{% block script %}
+  <script>
+    var typed = new Typed('#typed',{
+      strings:["Code The Web"],
+      backSpeed: 15,
+      smartBackspace: true,
+      backDelay: 3000,
+      startDelay: 500,
+      typeSpeed: 25,
+      loop: false,
+
+    });
+  </script>
+{% endblock script %}
+  

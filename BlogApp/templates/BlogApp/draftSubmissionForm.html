@@ -1,0 +1,62 @@
+{% extends 'BlogApp/main.html' %}
+{% load static %}
+
+
+{% block title %}
+    CTW-DraftSubmission
+{% endblock title %}
+    
+
+{% block style %}
+    
+{% endblock style %}
+    
+
+
+{% block content %}
+    <div class="container mt-2 pt-1 px-5">
+        <div class="row">
+            <div class="col-12">
+                <h1><b>Write for Code The Web</b> </h1>
+
+                <div class="py-4 pe-5">
+                    <p>We want to bring you a different kind of publication — one that covers every aspect of what it means to be a programmer.</p>
+                    <p class="my-3"> We accept programming tutorials, articles on managing software projects, building teams at tech companies, diveristy and inclusion, open source, technical interviewing, contract negotiation, building on top of the biggest blockchain projects, and programmer productivity.</p>
+                    <p class="my-3">We strive to give you a response within 3 business days. If you don't hear from us, then we've kindly passed on your article.</p>
+                    
+                    
+                </div>
+
+                <form class="py-3 pe-md-5 " method="POST" action="">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                            <label  class="form-label"><b> What's your email address?</b> <span style="color: red;">*</span></label>
+                            <input type="email" class="form-control"  aria-describedby="emailHelp" placeholder="you@mail.com" required name="email">
+                      </div>
+                      
+                    <div class="my-3 pt-3">
+                        <label  class="form-label"> <b> What's your Code The Web username? </b><span style="color: red;">*</span></label>
+                        <p style="font-size: 0.9em;">Do not have a Code the Web account? Get <a href="{% url 'login-page' %}" style="text-decoration: none;">here</a>  one for free. <br> Having a Code the Web account is neccessary for draft approval.</p>
+                        <input type="text" class="form-control"  aria-describedby="emailHelp" placeholder="@username" required name="username">
+                      </div>
+                      
+                    <div class="my-3 pt-3">
+                        <label  class="form-label"><b> Link to a draft </b><span style="color: red;">*</span></label>
+                        <p style="font-size: 0.9em;">Google doc drafts are preferred. If submitting a Google doc, please allow access to anyone who has the link.</p>
+                        <input type="text" class="form-control"  aria-describedby="emailHelp" placeholder="google docs or any other" required name="link">
+                      </div>
+
+                    <div class="my-3 pt-3">
+                        <label  class="form-label"><b> (Optional) Leave a nice note </b></label>
+                        <p style="font-size: 0.9em;">If you have other article ideas you could leave them here.</p>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="note"></textarea>
+                      </div>
+
+                      <button type="submit" class="btn btn-dark btn-lg1 btn-lg my-2">Submit</button>
+                    </form>
+
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+    

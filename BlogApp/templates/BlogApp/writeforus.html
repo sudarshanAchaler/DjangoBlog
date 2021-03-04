@@ -1,0 +1,288 @@
+{% extends 'BlogApp/main.html' %} 
+{% load static %} 
+
+{% block title %}
+CTW-WriteForUS 
+{% endblock title %} 
+
+
+{% block style %}
+<style>
+  body {
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.9),
+        rgba(0, 0, 0, 0.6)
+      ),
+      url("{% static 'images/aboutimg.jpg' %}") no-repeat center center/cover;
+
+    color: aliceblue;
+  }
+
+  @media (min-width: 600px) {
+    .box{
+      width: 100%;
+    }
+  
+</style>
+{% endblock style %} 
+
+
+
+{% block content %}
+<div class="container mt-2 px-0 px-md-1" >
+
+  
+
+  <div
+    class="row mt-4 box py-4"
+    style="box-shadow: hsl(221, 57%, 27%) 0 0 2px; color: black; background: rgba(255, 255, 255, 1);"
+    
+  >
+
+  <div class=" text-center">
+    <h1 style="color:#182c61"><b >Write For Us</b> </h1>
+    <hr style="color:#182c61" />
+  </div>
+    <div class="col-12 text-center mt-4">
+      <figure>
+        <img
+          src="{% static 'images/writeForUs.jpg' %}"
+          alt=""
+          class="img-fluid rounded mx-auto d-block"
+        />
+        <figcaption>
+          Photo by
+          <a
+            href="https://www.pexels.com/@pixabay"
+            style="text-decoration: none"
+            class="fst-italic"
+            >Pixabay on Pexels</a
+          >
+          .
+        </figcaption>
+      </figure>
+    </div>
+
+
+
+    <div class="col-12 px-sm-0 px-md-5 pb-md-5">
+      <h2
+        class="io ip dn ce iq ir is it iu iv iw ix iy iz ja jb jc jd je jf jg jh ji jj jk jl ek"
+        data-selectable-paragraph=""
+      >
+        &nbsp;
+      </h2>
+      <h2
+        id="a9c6"
+        class="io ip dn ce iq ir is it iu iv iw ix iy iz ja jb jc jd je jf jg jh ji jj jk jl ek"
+        data-selectable-paragraph=""
+      >
+        <strong>Ideas</strong>
+      </h2>
+      <p
+        id="3ab4"
+        class="hq hr dn hs b ht jm hv hw hx jn hz ia ib jo id ie if jp ih ii ij jq il im in df ek"
+        data-selectable-paragraph=""
+      >
+        <em class="jr"
+          >Here are a few ideas to get the creative juices flowing:</em
+        >
+      </p>
+      <ul class="">
+        <li
+          id="846f"
+          class="hq hr dn hs b ht hu hv hw hx hy hz ia ib ic id ie if ig ih ii ij ik il im in js jt ju ek"
+          data-selectable-paragraph=""
+        >
+          Tutorials on how to do something interesting, hard or complex with
+          your favorite language or framework.
+        </li>
+        <li
+          id="5d1e"
+          class="hq hr dn hs b ht jv hv hw hx jw hz ia ib jx id ie if jy ih ii ij jz il im in js jt ju ek"
+          data-selectable-paragraph=""
+        >
+          Actionable advice for other engineers on non-code-related aspects of
+          the job (negotiation, dealing with imposter syndrome, how to be a good
+          manager, remote work, etc.)
+        </li>
+        <li
+          id="4641"
+          class="hq hr dn hs b ht jv hv hw hx jw hz ia ib jx id ie if jy ih ii ij jz il im in js jt ju ek"
+          data-selectable-paragraph=""
+        >
+          Deep dives into the inner-workings of things we take for granted
+          everyday like Express, how CSS renders or the SwiftUI runtime.
+        </li>
+      </ul>
+      <h2
+        class="io ip dn ce iq ir is it iu iv iw ix iy iz ja jb jc jd je jf jg jh ji jj jk jl ek"
+        data-selectable-paragraph=""
+      >
+        &nbsp;
+      </h2>
+      <h2
+        id="beb3"
+        class="io ip dn ce iq ir is it iu iv iw ix iy iz ja jb jc jd je jf jg jh ji jj jk jl ek"
+        data-selectable-paragraph=""
+      >
+        <strong class="ay">Styleguide</strong>
+      </h2>
+      <p
+        id="0168"
+        class="hq hr dn hs b ht jm hv hw hx jn hz ia ib jo id ie if jp ih ii ij jq il im in df ek"
+        data-selectable-paragraph=""
+      >
+        <em class="jr">Instructions before you submit:</em>
+      </p>
+      <ul class="">
+        <li
+          id="c954"
+          class="hq hr dn hs b ht jv hv hw hx jw hz ia ib jx id ie if jy ih ii ij jz il im in js jt ju ek"
+          data-selectable-paragraph=""
+        >
+          Your article should have a title and a subtitle.
+        </li>
+        <li
+          id="6579"
+          class="hq hr dn hs b ht jv hv hw hx jw hz ia ib jx id ie if jy ih ii ij jz il im in js jt ju ek"
+          data-selectable-paragraph=""
+        >
+          Please remove all personal calls to action in your post such as
+          &ldquo;sign up for my newsletter&rdquo; or &ldquo;follow me on
+          Twitter.&rdquo;
+        </li>
+        <li
+          id="fdc2"
+          class="hq hr dn hs b ht jv hv hw hx jw hz ia ib jx id ie if jy ih ii ij jz il im in js jt ju ek"
+          data-selectable-paragraph=""
+        >
+          If you include code snippets, use GitHub&nbsp;<a
+            class="ck hp"
+            href="http://gist.github.com/"
+            rel="noopener nofollow"
+            >gists</a
+          >, paste the URL of the gist into your post and press enter. It will
+          render the code as part of your post and include syntax highlighting
+          if your gist is named with the correct file extension (<code
+            class="hf ka kb kc kd b"
+            >.css</code
+          >,&nbsp;<code class="hf ka kb kc kd b">.js</code>,&nbsp;<code
+            class="hf ka kb kc kd b"
+            >.swift</code
+          >, etc.).
+        </li>
+        <li
+          id="093d"
+          class="hq hr dn hs b ht jv hv hw hx jw hz ia ib jx id ie if jy ih ii ij jz il im in js jt ju ek"
+          data-selectable-paragraph=""
+        >
+          Please add a nice cover image that you have the rights to use or are
+          Creative Commons. We recommend sites like&nbsp;<a
+            class="ck hp"
+            href="http://unsplash.com/"
+            rel="noopener nofollow"
+            >Unsplash</a
+          >. Please give the photographer credit. See the top of this post for
+          an example.
+        </li>
+        <li
+          id="ea82"
+          class="hq hr dn hs b ht jv hv hw hx jw hz ia ib jx id ie if jy ih ii ij jz il im in js jt ju ek"
+          data-selectable-paragraph=""
+        >
+          At the bottom of your article, please include a&nbsp;<strong
+            class="hs ke"
+            >Resources</strong
+          >&nbsp;section with any links that you mentioned in your post for
+          quick reference by the reader. GitHub repos, Playgrounds, JSFiddles
+          and gists are highly recommended.
+        </li>
+        <li
+          id="09d3"
+          class="hq hr dn hs b ht jv hv hw hx jw hz ia ib jx id ie if jy ih ii ij jz il im in js jt ju ek"
+          data-selectable-paragraph=""
+        >
+          Make sure the article read time is longer than three minutes.
+        </li>
+      </ul>
+      <h2
+        class="io ip dn ce iq ir is it iu iv iw ix iy iz ja jb jc jd je jf jg jh ji jj jk jl ek"
+        data-selectable-paragraph=""
+      >
+        &nbsp;
+      </h2>
+      <h2
+        id="7ff4"
+        class="io ip dn ce iq ir is it iu iv iw ix iy iz ja jb jc jd je jf jg jh ji jj jk jl ek"
+        data-selectable-paragraph=""
+      >
+       <b>Diversity and Inclusion</b> 
+      </h2>
+      <p
+        id="1691"
+        class="hq hr dn hs b ht jm hv hw hx jn hz ia ib jo id ie if jp ih ii ij jq il im in df ek"
+        data-selectable-paragraph=""
+      >
+        Code The Web strives to be an inclusive place where everyone feels
+        welcome to read, write, and teach others.
+      </p>
+      <p
+        id="ae3f"
+        class="hq hr dn hs b ht hu hv hw hx hy hz ia ib ic id ie if ig ih ii ij ik il im in df ek"
+        data-selectable-paragraph=""
+      >
+        If you represent an under-represented group in startups, tech, or STEM,
+        we highly encourage you to submit an article and contribute to Code the Web.
+      </p>
+      <p
+        id="37fa"
+        class="hq hr dn hs b ht hu hv hw hx hy hz ia ib ic id ie if ig ih ii ij ik il im in df ek"
+        data-selectable-paragraph=""
+      >
+        We are looking for clear, helpful advice and believe that everyone has
+        something to teach.
+      </p>
+      <h2
+        id="e9f6"
+        class="io ip dn ce iq ir is it iu iv iw ix iy iz ja jb jc jd je jf jg jh ji jj jk jl ek"
+        data-selectable-paragraph=""
+      >
+      <br>
+      <b>Submission </b>
+      </h2>
+      <p
+        id="7b30"
+        class="hq hr dn hs b ht hu hv hw hx hy hz ia ib ic id ie if ig ih ii ij ik il im in df ek"
+        data-selectable-paragraph=""
+      >
+        When your post is ready,&nbsp;<a
+          class="ck hp"
+          href="{% url 'draftSubmission' %}"
+          rel="noopener nofollow"
+          >submit a draft via our submission form</a
+        >.
+      </p>
+      <p
+        id="b16c"
+        class="hq hr dn hs b ht hu hv hw hx hy hz ia ib ic id ie if ig ih ii ij ik il im in df ek"
+        data-selectable-paragraph=""
+      >
+        If you don&rsquo;t hear back from us within three days, please assume
+        that we kindly passed on your submission.
+      </p>
+      
+      <p
+        id="2950"
+        class="hq hr dn hs b ht hu hv hw hx hy hz ia ib ic id ie if ig ih ii ij ik il im in df ek"
+        data-selectable-paragraph=""
+      >
+        <strong class="hs ke">We look forward to your submissions!</strong>
+      </p>
+    </div>
+
+
+  </div>
+</div>
+{% endblock content %}

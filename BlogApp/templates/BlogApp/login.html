@@ -1,0 +1,89 @@
+{% extends 'BlogApp/main.html' %}
+{% load static %}
+
+
+{% block title %}
+    CodeTheWeb-Login
+{% endblock title %}
+
+
+{% block style %}
+    <style>
+
+        h1{
+            display: inline-block;
+            background-color: #182C61;
+            color: white;
+            margin-top: 0.7em;
+            padding: 0 1em 0 1em;
+            border-radius: 3em;
+
+        }
+        
+        .box1{ 
+            display:block; 
+            min-width: 90%;
+            max-width: 100%;
+            margin:auto;
+            background-image: url("{%static 'images/slider3.jpg' %}");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover; 
+            box-shadow:#182C61 0 0 10px; color:#182C61;
+            border-radius: 4px;
+        }
+
+        #mybox{
+            display:block; 
+            width: 55%;
+            margin:auto; 
+            box-shadow:hsl(0, 0%, 80%) 0 0 2px;
+            background-color: #fff;
+            border-radius: 4px;
+        }
+
+        @media (max-width: 550px) {
+            #mybox {
+              width:90%;
+              font-size:0.8em ;
+            }
+
+        
+    </style>
+{% endblock style %}
+    
+    
+
+{% block content %}
+    <div class="container mt-5  p-4">
+        <div class="box1 text-center p-3 mb-2" >
+            <h1 class="my-2">LOGIN</h1>
+            <div class="row mb-4 m-auto px-sm-0 p-2 p-md-4" id="mybox" >
+                <form action="/loginUser/" method="POST">
+                    {% csrf_token %}
+                    <div class="mb-3 text-start">
+                        <label  class="form-label">Username</label>
+                        <input type="text" class="form-control form-control-sm"  placeholder="ironman3000" name="username" required> 
+                    </div>
+                    <div class="mb-3 text-start">
+                        <label  class="form-label">Password</label>
+                        <input type="password" class="form-control form-control-sm"  placeholder="password" name="password" required>
+                    </div>
+                    <div class="mb-3 text-center pt-3">
+                        <button type="submit" class="btn btn-outline-success" id="loginBtn">Login</button>
+                    </div>
+                </form>
+                <div class=" text-center ">
+                    <a href="{% url 'register-page' %}" style="text-decoration: none; font-size: 0.9em;">New to this blog? Sign Up here... </a>
+                  </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+
+{% block script %}
+    <script>
+        
+    </script>
+{% endblock script %}
