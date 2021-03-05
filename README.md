@@ -10,3 +10,6 @@ Functionalities:
 6. Pagination on posts page
 7. Django Admin
 8. Search Feature: User can search blogs using keywords
+
+
+![screencapture-127-0-0-1-8000-2021-03-04-20_02_31](https://user-images.githubusercontent.com/71818189/109979223-aaa27400-7d24-11eb-89ac-e1699bb2f9b3.png)
